@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Tập Hiện Mật Khẩu</title>
+    <link rel="stylesheet" href="./fonts/fontawesome-free-5.15.3-web/css/all.min.css">
+
+    <style>
+        .main{
+            background-color: rgb(145, 228, 37);
+            width: 1000px;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            padding-top: 200px;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+        input{
+            font-size: 20px;
+            line-height: 1.5;            
+        }
+
+        i{
+            font-size: 20px;
+        }
+
+        i:hover{
+            cursor: pointer;
+        }
+    </style>
+
+    <script>
+        var kt =1;
+        
+        function hien_mk(){
+            var mk = document.getElementById('mk');
+            var mat = document.getElementById('mat');
+            mk.type='text';
+            mat.className="far fa-eye";
+        }
+
+        function an_mk(){
+            var mk = document.getElementById('mk');
+            var mat = document.getElementById('mat');
+            mk.type='password';
+            mat.className="far fa-eye-slash";
+        }
+
+        function an_hien_mk(){
+            if (kt==1) {
+                hien_mk()
+                kt *= -1;
+            } else {
+                an_mk()
+                kt *= -1;
+            }
+        }
+    </script>
+
+
+</head>
+<body>
+    <div class="main">
+        <form action="#">
+            <input type="password" name="" id="mk" placeholder="Điền mật khẩu...">
+            <i class="far fa-eye-slash" onclick="an_hien_mk()" id="mat"></i>
+        </form>
+    </div>
+</body>
+</html>
